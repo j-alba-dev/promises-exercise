@@ -6,17 +6,22 @@ Write a function called delayedMessage that takes in a message (string) and a de
 
 Starter Code:
 */
+module.exports = { delayedMessage, countdown };
 
 function delayedMessage(message, delay) {
-    // Write your code here
-  
-  }
-  
-  // Test case
-delayedMessage("Hello, world!", 2000); // Should display "Hello, world!" after a 2-second delay
-  
+  // Write your code here
+  setTimeout(
+    (func = () => {
+      console.log(message);
+    }),
+    delay
+  );
+}
 
-  // Challenge 2: Countdown
+// Test case
+delayedMessage("Hello, world!", 2000); // Should display "Hello, world!" after a 2-second delay
+
+// Challenge 2: Countdown
 
 /*
 Instructions:
@@ -26,10 +31,16 @@ Starter Code:
 */
 
 function countdown(number) {
-    // Write your code here
-  
-  }
-  
-  // Test case
-  countdown(5); // Should display: 5, 4, 3, 2, 1, 0 with a 1-second delay between each number
-  
+  // Write your code here
+  setTimeout(
+    (func = () => {
+      for (let i = number; i >= 0; i--) {
+        console.log(i);
+      }
+    }),
+    1000
+  );
+}
+
+// Test case
+countdown(5); // Should display: 5, 4, 3, 2, 1, 0 with a 1-second delay between each number
